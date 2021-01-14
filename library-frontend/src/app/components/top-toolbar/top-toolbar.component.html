@@ -1,0 +1,20 @@
+<mat-toolbar class="mat-elevation-z1">
+    <mat-toolbar-row>
+        <ng-container *ngIf="!loggedIn">
+            <button mat-button [routerLink]="['/login']">
+                <p>Logowanie</p>
+            </button>
+            <button mat-button [routerLink]="['/register']">
+                <p>Rejestracja</p>
+            </button>
+        </ng-container>
+        <ng-container *ngIf="loggedIn">
+            <button mat-button>
+                <p>{{username}}</p>
+            </button>
+            <button mat-button (click)="signOut()">
+                <p>Wyloguj się</p>
+              </button>
+        </ng-container>
+    </mat-toolbar-row>
+</mat-toolbar>
